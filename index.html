@@ -25,19 +25,29 @@
         <source src="Edd_Sheeran_-_Perfect_(mp3.pm).mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Music Toggle Button -->
-    <button id="music-toggle" class="music-toggle">
-        <svg class="music-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-                d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-    </button>
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="music-toggle">🔇</button>
 
     <div class="app-container">
 
+        <!-- Password Screen -->
+        <div class="screen active" id="screen-password">
+            <div class="card password-card">
+                <div class="password-lock">🔒</div>
+                <h2 class="password-title">Enter Password</h2>
+                <p class="password-subtitle">This is a private space</p>
+
+                <div class="password-input-container">
+                    <input type="password" id="password-input" class="password-input" placeholder="Enter password">
+                    <button class="btn-unlock" onclick="checkPassword()">Unlock 💕</button>
+                </div>
+
+                <p class="password-error" id="password-error"></p>
+            </div>
+        </div>
+
         <!-- Screen 1: Welcome/Splash -->
-        <div class="screen active" id="screen-welcome">
+        <div class="screen" id="screen-welcome">
             <div class="card welcome-card">
                 <div class="illustration-container">
                     <img src="download (3).jpg" alt="Romantic Couple" class="main-illustration">

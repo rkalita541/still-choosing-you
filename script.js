@@ -1,3 +1,42 @@
+// Password Protection
+const CORRECT_PASSWORD = "iloveyou"; // Change this to your desired password
+
+function checkPassword() {
+    const input = document.getElementById('password-input');
+    const error = document.getElementById('password-error');
+    const enteredPassword = input.value;
+
+    if (enteredPassword === CORRECT_PASSWORD) {
+        // Correct password - show welcome screen
+        document.getElementById('screen-password').classList.remove('active');
+        document.getElementById('screen-welcome').classList.add('active');
+        error.textContent = '';
+    } else {
+        // Wrong password
+        error.textContent = '❌ Incorrect password. Try again!';
+        input.value = '';
+        input.focus();
+
+        // Shake animation
+        input.style.animation = 'shake 0.5s';
+        setTimeout(() => {
+            input.style.animation = '';
+        }, 500);
+    }
+}
+
+// Allow Enter key to submit password
+document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password-input');
+    if (passwordInput) {
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    }
+});
+
 // Screen navigation
 function navigateToScreen(screenId) {
     const currentScreen = document.querySelector('.screen.active');

@@ -122,6 +122,98 @@ body {
     }
 }
 
+/* ===== PASSWORD SCREEN ===== */
+.password-card {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.password-lock {
+    font-size: 64px;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.password-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #6B5B5B;
+    margin: 0 0 10px;
+}
+
+.password-subtitle {
+    font-size: 14px;
+    color: #999;
+    margin: 0 0 40px;
+}
+
+.password-input-container {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.password-input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #FFD1DC;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    background: #FFF;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: #FF8FA3;
+    box-shadow: 0 0 0 4px rgba(255, 143, 163, 0.1);
+}
+
+.btn-unlock {
+    width: 100%;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #FF8FA3 0%, #FFB6C1 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 143, 163, 0.3);
+}
+
+.btn-unlock:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 143, 163, 0.4);
+}
+
+.btn-unlock:active {
+    transform: scale(0.95);
+}
+
+.password-error {
+    color: #FF6B6B;
+    font-size: 13px;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
 /* ===== WELCOME SCREEN ===== */
 .welcome-card {
     text-align: center;
@@ -863,5 +955,29 @@ body {
     .commitment-image,
     .moments-image {
         width: 200px;
+    }
+}
+
+/* Shake animation for wrong password */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
     }
 }
