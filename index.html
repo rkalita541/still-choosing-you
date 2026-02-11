@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FFD1DC">
+    <title>Valentine's Day Special</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="Edd_Sheeran_-_Perfect_(mp3.pm).mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="music-toggle">
+        <svg class="music-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+                d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <div class="app-container">
+
+        <!-- Screen 1: Welcome/Splash -->
+        <div class="screen active" id="screen-welcome">
+            <div class="card welcome-card">
+                <div class="illustration-container">
+                    <img src="download (3).jpg" alt="Romantic Couple" class="main-illustration">
+                </div>
+                <div class="content">
+                    <p class="subtitle">You make every moment special</p>
+                    <h1 class="main-title">My heart belongs to you</h1>
+                </div>
+                <button class="btn-next" onclick="navigateToScreen('screen-actions')">
+                    Next
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen 2: Actions -->
+        <div class="screen" id="screen-actions">
+            <div class="card actions-card">
+                <button class="btn-back" onclick="navigateToScreen('screen-welcome')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="header">
+                    <h2 class="screen-title">For You</h2>
+                    <p class="screen-subtitle">Something special I want to share</p>
+                </div>
+
+                <div class="preview-card" onclick="navigateToScreen('screen-love-cards')">
+                    <div class="preview-icon">💝</div>
+                    <h3>Things I Love About You</h3>
+                    <p>Tap to see what makes you special to me</p>
+                    <div class="preview-arrow">→</div>
+                </div>
+
+                <button class="btn-continue" onclick="navigateToScreen('screen-romance')">Continue to Next →</button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Love Cards -->
+        <div class="screen" id="screen-love-cards">
+            <div class="card love-cards-card">
+                <button class="btn-back" onclick="navigateToScreen('screen-actions')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="header">
+                    <h2 class="screen-title">Things I Love About You</h2>
+                    <p class="screen-subtitle">Every little thing makes my heart smile</p>
+                </div>
+
+                <div class="love-cards-grid">
+                    <div class="love-card">
+                        <p>The way you listen, even when you're tired</p>
+                    </div>
+                    <div class="love-card">
+                        <p>How safe you make me feel</p>
+                    </div>
+                    <div class="love-card">
+                        <p>Your laugh. Always your laugh</p>
+                    </div>
+                    <div class="love-card">
+                        <p>The way you care about the little things</p>
+                    </div>
+                    <div class="love-card">
+                        <p>How you make ordinary moments special</p>
+                    </div>
+                    <div class="love-card">
+                        <p>Your kindness to everyone around you</p>
+                    </div>
+                    <div class="love-card">
+                        <p>The way you understand me without words</p>
+                    </div>
+                    <div class="love-card">
+                        <p>How you brighten my darkest days</p>
+                    </div>
+                    <div class="love-card">
+                        <p>Everything about you, honestly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 4: Distance -->
+        <div class="screen" id="screen-romance">
+            <div class="card distance-card">
+                <button class="btn-back" onclick="navigateToScreen('screen-actions')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <h2 class="distance-title">Even With the Distance</h2>
+
+                <div class="distance-visual">
+                    <img src="download (4).jpg" alt="Together Despite Distance" class="distance-image">
+                </div>
+
+                <div class="distance-statements">
+                    <p class="statement">Different places.</p>
+                    <p class="statement">Same feelings.</p>
+                    <p class="statement">Same future.</p>
+                </div>
+
+                <button class="btn-continue" onclick="navigateToScreen('screen-promises')"
+                    style="margin-top: 40px;">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Screen 5: Promises -->
+        <div class="screen" id="screen-promises">
+            <div class="card promises-card">
+                <button class="btn-back" onclick="navigateToScreen('screen-romance')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <h2 class="promises-title">Things I Promise You</h2>
+
+                <div class="promises-list">
+                    <p class="promise-item">I'll always choose communication.</p>
+                    <p class="promise-item">I'll respect your feelings.</p>
+                    <p class="promise-item">I'll keep choosing you.</p>
+                    <p class="promise-item">I'll be patient and understanding.</p>
+                    <p class="promise-item">I'll support your dreams.</p>
+                    <p class="promise-item">I'll make time for us, always.</p>
+                </div>
+
+                <button class="btn-continue" onclick="navigateToScreen('screen-support')"
+                    style="margin-top: 40px;">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Screen 6: Support -->
+        <div class="screen" id="screen-support">
+            <div class="card support-card">
+                <button class="btn-back" onclick="navigateToScreen('screen-promises')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <h2 class="support-title">When You Feel Low</h2>
+
+                <div class="support-messages">
+                    <p class="support-message">You can always talk to me.</p>
+                    <p class="support-message">You don't have to be strong all the time.</p>
+                    <p class="support-message">I'm on your side. Always.</p>
+                </div>
+
+                <button class="btn-continue" onclick="navigateToScreen('screen-commitment')"
+                    style="margin-top: 40px;">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Screen 7: Commitment -->
+        <div class="screen" id="screen-commitment">
+            <div class="card commitment-card">
+                <button class="btn-back" onclick="navigateToScreen('screen-support')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="commitment-image-container">
+                    <img src="download (5).jpg" alt="Together" class="commitment-image">
+                </div>
+
+                <h2 class="commitment-title">No Matter Where We Are</h2>
+
+                <div class="commitment-text">
+                    <p>Even with distance,<br>
+                        even on hard days,<br>
+                        I choose you.</p>
+
+                    <p>And I will keep choosing you.</p>
+                </div>
+
+                <button class="btn-continue" onclick="navigateToScreen('screen-moments')"
+                    style="margin-top: 40px;">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Screen 8: Our Moments -->
+        <div class="screen" id="screen-moments">
+            <div class="card moments-gallery-card">
+                <button class="btn-back" onclick="navigateToScreen('screen-commitment')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="moments-header-image">
+                    <img src="download__6_-removebg-preview.png" alt="Our Journey" class="moments-image">
+                </div>
+
+                <div class="moments-intro">
+                    <h2 class="moments-title">And through it all...</h2>
+                    <p class="moments-subtitle">We've created beautiful memories together</p>
+                </div>
+
+                <h3 class="gallery-heading">Our Moments</h3>
+
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <div class="photo-slot">
+                                    <div class="photo-placeholder">📸</div>
+                                    <p class="photo-caption">Add your photo</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="photo-slot">
+                                    <div class="photo-placeholder">📸</div>
+                                    <p class="photo-caption">Add your photo</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="photo-slot">
+                                    <div class="photo-placeholder">📸</div>
+                                    <p class="photo-caption">Add your photo</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="photo-slot">
+                                    <div class="photo-placeholder">📸</div>
+                                    <p class="photo-caption">Add your photo</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="photo-slot">
+                                    <div class="photo-placeholder">📸</div>
+                                    <p class="photo-caption">Add your photo</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="photo-slot">
+                                    <div class="photo-placeholder">📸</div>
+                                    <p class="photo-caption">Add your photo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                        <span class="dot" data-slide="4"></span>
+                        <span class="dot" data-slide="5"></span>
+                    </div>
+                </div>
+
+                <div class="moments-closing">
+                    <p>Every moment with you is a treasure 💕</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
