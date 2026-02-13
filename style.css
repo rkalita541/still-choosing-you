@@ -27,29 +27,51 @@ body {
 /* ===== MUSIC TOGGLE ===== */
 .music-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 56px;
-    height: 56px;
+    top: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: linear-gradient(135deg, #FF8FA3 0%, #FFB6C1 100%);
-    border: none;
-    box-shadow: 0 4px 15px rgba(255, 143, 163, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 8px 32px rgba(255, 143, 163, 0.3),
+        0 2px 8px rgba(255, 143, 163, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .music-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(255, 143, 163, 0.5);
+    transform: scale(1.1) translateY(-2px);
+    box-shadow:
+        0 12px 40px rgba(255, 143, 163, 0.4),
+        0 4px 12px rgba(255, 143, 163, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.music-toggle:active {
+    transform: scale(1.05) translateY(0);
 }
 
 .music-toggle.playing {
-    animation: pulse-music 1.5s ease-in-out infinite;
+    animation: pulse-music 2s ease-in-out infinite;
+}
+
+.music-toggle.playing::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 143, 163, 0.4);
+    animation: ring-pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse-music {
@@ -57,17 +79,37 @@ body {
     0%,
     100% {
         transform: scale(1);
-        box-shadow: 0 4px 15px rgba(255, 143, 163, 0.4);
+        box-shadow:
+            0 8px 32px rgba(255, 143, 163, 0.3),
+            0 2px 8px rgba(255, 143, 163, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
     50% {
-        transform: scale(1.05);
-        box-shadow: 0 6px 25px rgba(255, 143, 163, 0.6);
+        transform: scale(1.08);
+        box-shadow:
+            0 12px 40px rgba(255, 143, 163, 0.5),
+            0 4px 12px rgba(255, 143, 163, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+}
+
+@keyframes ring-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
     }
 }
 
 .music-icon {
     color: white;
+    font-size: 24px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 /* ===== APP CONTAINER ===== */
