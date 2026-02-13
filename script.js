@@ -81,7 +81,7 @@ document.addEventListener('click', () => {
 }, { once: true });
 
 // Carousel functionality
-let currentSlide = 0;
+window.currentSlide = 0;
 const track = document.querySelector('.carousel-track');
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
@@ -192,13 +192,13 @@ if (track) {
 window.moveCarousel = function (direction) {
     const totalSlides = document.querySelectorAll('.carousel-slide').length;
 
-    currentSlide += direction;
+    window.currentSlide += direction;
 
     // Loop around
-    if (currentSlide < 0) {
-        currentSlide = totalSlides - 1;
-    } else if (currentSlide >= totalSlides) {
-        currentSlide = 0;
+    if (window.currentSlide < 0) {
+        window.currentSlide = totalSlides - 1;
+    } else if (window.currentSlide >= totalSlides) {
+        window.currentSlide = 0;
     }
 
     updateCarousel();
