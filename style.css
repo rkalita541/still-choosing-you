@@ -832,40 +832,117 @@ body {
     margin: 0;
 }
 
-/* ===== RESPONSIVE - MOBILE OPTIMIZED ===== */
+/* ===== RESPONSIVE - MOBILE APP STYLE ===== */
 @media screen and (max-width: 480px) {
+    html {
+        overflow: hidden !important;
+        height: 100% !important;
+    }
+
     body {
-        padding: 16px !important;
+        margin: 0 !important;
+        padding: 0 !important;
         background: linear-gradient(135deg, #FFE5EC 0%, #FFF0F5 100%) !important;
-        min-height: 100vh !important;
+        overflow: hidden !important;
+        height: 100vh !important;
+        width: 100vw !important;
     }
 
     .app-container {
-        max-width: 100% !important;
-        width: 100% !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         padding: 0 !important;
+        overflow: hidden !important;
     }
 
     .screen {
         width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 5vh 5vw !important;
     }
 
     .card {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 auto !important;
-        border-radius: 24px !important;
-        padding: 32px 24px !important;
+        width: 90% !important;
+        max-width: 380px !important;
+        height: 90vh !important;
+        max-height: 90vh !important;
+        margin: 0 !important;
+        padding: 24px !important;
+        background: white !important;
+        border-radius: 32px !important;
         box-shadow: 0 8px 32px rgba(255, 143, 163, 0.15) !important;
         animation: none !important;
-        background: white !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        overflow: hidden !important;
+    }
+
+    /* Welcome Card Specific */
+    .welcome-card {
+        padding: 28px 24px !important;
+        justify-content: center !important;
+    }
+
+    .illustration-container {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 45vh !important;
+        margin-bottom: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .main-illustration {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: 45vh !important;
+        object-fit: cover !important;
+        border-radius: 20px !important;
+    }
+
+    .content {
+        flex: 0 !important;
+        text-align: center !important;
+        margin-bottom: auto !important;
+    }
+
+    .subtitle {
+        font-size: 13px !important;
+        margin-bottom: 8px !important;
+        color: #999 !important;
+    }
+
+    .main-title {
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+    }
+
+    .btn-next,
+    .btn-primary,
+    .btn-back {
+        margin-top: auto !important;
+        padding: 14px 32px !important;
+        font-size: 15px !important;
+        width: auto !important;
     }
 
     /* Password Screen */
     .password-card {
-        padding: 40px 24px !important;
+        padding: 32px 24px !important;
         animation: none !important;
-        border-radius: 24px !important;
+        border-radius: 32px !important;
+        justify-content: center !important;
     }
 
     .password-lock {
