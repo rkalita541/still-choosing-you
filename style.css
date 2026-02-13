@@ -834,54 +834,31 @@ body {
 
 /* ===== RESPONSIVE - MOBILE OPTIMIZED ===== */
 @media screen and (max-width: 480px) {
-    html {
-        overflow: hidden !important;
-        height: 100% !important;
-    }
-
     body {
         padding: 16px !important;
         background: linear-gradient(135deg, #FFE5EC 0%, #FFF0F5 100%) !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
         min-height: 100vh !important;
-        height: 100vh !important;
-        overflow: hidden !important;
-        position: fixed !important;
-        width: 100% !important;
     }
 
     .app-container {
         max-width: 100% !important;
         width: 100% !important;
-        height: 100% !important;
         padding: 0 !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
     }
 
     .screen {
         width: 100% !important;
-        height: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
     }
 
     .card {
         width: 100% !important;
         max-width: 100% !important;
-        max-height: 95vh !important;
         margin: 0 auto !important;
         border-radius: 24px !important;
         padding: 32px 24px !important;
         box-shadow: 0 8px 32px rgba(255, 143, 163, 0.15) !important;
         animation: none !important;
         background: white !important;
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
     }
 
     /* Password Screen */
@@ -889,7 +866,6 @@ body {
         padding: 40px 24px !important;
         animation: none !important;
         border-radius: 24px !important;
-        overflow-y: visible !important;
     }
 
     .password-lock {
