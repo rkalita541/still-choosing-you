@@ -75,27 +75,31 @@ body {
     width: 100%;
     max-width: 420px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
 }
 
 /* ===== SCREEN MANAGEMENT ===== */
 .screen {
     display: none;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     width: 100%;
+    transform: translateY(-50%);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .screen.active {
     display: block;
     opacity: 1;
-    transform: translateX(0);
     pointer-events: all;
 }
 
 .screen.exit-left {
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateY(-50%);
     opacity: 0;
 }
 
