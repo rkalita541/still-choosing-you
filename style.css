@@ -834,47 +834,51 @@ body {
 
 /* ===== RESPONSIVE - MOBILE FULL SCREEN ===== */
 @media screen and (max-width: 480px) {
+    html {
+        background: white !important;
+    }
+
     body {
-        padding: 0;
-        background: white;
-        /* Remove pink background on mobile */
+        padding: 0 !important;
+        background: white !important;
+        display: block !important;
+        min-height: 100vh !important;
     }
 
     .app-container {
-        max-width: 100%;
-        padding: 0;
-        min-height: 100vh;
-        display: flex;
-        align-items: stretch;
+        max-width: 100% !important;
+        padding: 0 !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: stretch !important;
     }
 
     .screen {
-        width: 100%;
-        padding: 0;
-        display: flex;
-        align-items: stretch;
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: stretch !important;
     }
 
     .card {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        border-radius: 0;
-        min-height: 100vh;
-        padding: env(safe-area-inset-top, 20px) 24px env(safe-area-inset-bottom, 20px) 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        box-shadow: none;
-        animation: none;
-        /* Disable floating animation on mobile */
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        min-height: 100vh !important;
+        padding: env(safe-area-inset-top, 20px) 24px env(safe-area-inset-bottom, 20px) 24px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        box-shadow: none !important;
+        animation: none !important;
     }
 
     /* Password Screen */
     .password-card {
-        padding: 60px 28px;
-        animation: none;
-        /* Disable floating animation */
+        padding: 60px 28px !important;
+        animation: none !important;
+        border-radius: 0 !important;
     }
 
     .password-lock {
