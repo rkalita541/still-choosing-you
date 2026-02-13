@@ -187,3 +187,19 @@ if (track) {
 
     track.style.cursor = 'grab';
 }
+
+// Carousel arrow navigation
+window.moveCarousel = function (direction) {
+    const totalSlides = document.querySelectorAll('.carousel-slide').length;
+
+    currentSlide += direction;
+
+    // Loop around
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    }
+
+    updateCarousel();
+}
