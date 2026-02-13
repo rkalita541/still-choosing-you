@@ -29,27 +29,45 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FF8FA3 0%, #FFB6C1 100%);
-    border: none;
-    box-shadow: 0 4px 15px rgba(255, 143, 163, 0.4);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 143, 163, 0.2);
+    box-shadow:
+        0 4px 20px rgba(255, 143, 163, 0.15),
+        0 1px 3px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .music-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(255, 143, 163, 0.5);
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 30px rgba(255, 143, 163, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+    border-color: rgba(255, 143, 163, 0.3);
+    background: rgba(255, 255, 255, 1);
+}
+
+.music-toggle:active {
+    transform: translateY(0);
 }
 
 .music-toggle.playing {
-    animation: pulse-music 1.5s ease-in-out infinite;
+    background: linear-gradient(135deg, #FF8FA3 0%, #FFB6C1 100%);
+    border-color: rgba(255, 255, 255, 0.3);
+    animation: pulse-music 2s ease-in-out infinite;
+}
+
+.music-toggle.playing .music-icon {
+    color: white;
 }
 
 @keyframes pulse-music {
@@ -57,17 +75,23 @@ body {
     0%,
     100% {
         transform: scale(1);
-        box-shadow: 0 4px 15px rgba(255, 143, 163, 0.4);
+        box-shadow:
+            0 4px 20px rgba(255, 143, 163, 0.3),
+            0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     50% {
         transform: scale(1.05);
-        box-shadow: 0 6px 25px rgba(255, 143, 163, 0.6);
+        box-shadow:
+            0 8px 30px rgba(255, 143, 163, 0.4),
+            0 2px 8px rgba(0, 0, 0, 0.08);
     }
 }
 
 .music-icon {
-    color: white;
+    color: #FF8FA3;
+    font-size: 22px;
+    transition: color 0.3s ease;
 }
 
 /* ===== APP CONTAINER ===== */
